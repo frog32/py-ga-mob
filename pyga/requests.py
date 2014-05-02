@@ -429,6 +429,7 @@ class TransactionRequest(Request):
         params.utmtci = self.transaction.city
         params.utmtrg = self.transaction.state
         params.utmtco = self.transaction.country
+        params.utmcu = self.transaction.currency
         return params
 
     def build_visitor_parameters(self, parameters):
@@ -555,6 +556,7 @@ class Parameters(object):
     utmtci -- Billing City
     utmtrg -- Billing Region
     utmtco -- Billing Country
+    utmcu -- Order currency
 
     Campaign Parameters:
     utmcn -- Starts a new campaign session. Either utmcn or utmcr is present on any given request,
@@ -692,6 +694,7 @@ class Parameters(object):
         self.utmtci = ''
         self.utmtrg = ''
         self.utmtco = ''
+        self.utmcu = ''
 
         # Campaign Parameters
         self.utmcn = ''

@@ -348,6 +348,7 @@ class Transaction(object):
     state -- Billing Region, will be mapped to "utmtrg" parameter
     country -- Billing Country, will be mapped to "utmtco" parameter
     items -- @entity.Items in a transaction
+    currency -- Order currency, will be mapped to "utmcu" parameter
 
     '''
     def __init__(self):
@@ -360,6 +361,7 @@ class Transaction(object):
         self.city = None
         self.state = None
         self.country = None
+        self.currency = None
 
     def __setattr__(self, name, value):
         if name == 'order_id':
